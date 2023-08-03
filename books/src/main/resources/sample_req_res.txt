@@ -1,0 +1,24 @@
+# allBooks
+query {
+  allBooks {
+    id
+    title
+    pages
+    author {
+      id
+      name
+    }
+  }
+}
+# findOne
+query {
+  findOne(id: 2) {
+    id
+    title
+    pages
+    author {
+      id
+      name
+    }
+  }
+}

@@ -1,0 +1,35 @@
+type Query {
+	_service: _Service # Add this line to include the _service field
+	allBooks: [Book]
+	findOne(id: ID!): Book
+	allAuthors: [Author]
+	findAuthor(id: ID!): Author
+	findAuthorByName(name: String!): Author
+}
+
+type _Service {
+	sdl: String
+}
+
+type Mutation {
+	addAuthor(name: String): Author
+    addBook(book: BookInput): Book
+}
+
+input BookInput {
+    title: String!
+    authorId: ID!
+}
+
+type Author {
+  id: ID!
+  name: String!
+  books: [Book]
+}
+
+type Book {
+  id: ID!
+  title: String!
+  pages: Int
+  author: Author
+}

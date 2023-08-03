@@ -1,0 +1,40 @@
+query {
+  allBooks {
+    id
+    title
+    pages
+    author {
+      id
+      name
+    }
+  }
+}
+query {
+  findOne(id: 2) {
+    id
+    title
+    pages
+    author {
+      id
+      name
+    }
+  }
+}
+query {
+  findAuthor(id: 2) {
+    id
+    name
+    books {
+        id
+        title
+        pages
+    }
+  }
+}
+query IntrospectionQuery {
+  __schema {
+    types {
+      name
+    }
+  }
+}

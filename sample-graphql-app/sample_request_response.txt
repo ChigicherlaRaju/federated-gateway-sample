@@ -1,0 +1,23 @@
+query {
+  getAllProducts {
+    id
+    name
+    price
+    description
+  }
+}
+query {
+  getProductById(id: "2") {
+    id
+    name
+    price
+    description
+  }
+}
+query IntrospectionQuery {
+  __schema {
+    types {
+      name
+    }
+  }
+}
